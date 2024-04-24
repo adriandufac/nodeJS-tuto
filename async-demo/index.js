@@ -106,6 +106,7 @@ console.log("After");
  */
 
 /**************ASYNC / AWAIT ********************************/
+let a = 1;
 async function displayComits() {
   console.log("Before");
   try {
