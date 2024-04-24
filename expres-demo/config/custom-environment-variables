@@ -1,0 +1,6 @@
+{
+    "mail" : {
+        "password" : "app_password"
+    },
+    "_comment" : "We use this file to map password for security reason that as stored as env variable in the server where the app is deployed"
+} 
