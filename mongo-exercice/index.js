@@ -33,4 +33,12 @@ async function getCoursesExercice2() {
   console.log(courses);
 }
 
-getCoursesExercice2();
+async function getCoursesExercice3() {
+  const courses = await Course.find({ isPublished: true })
+    .or([{ price: { $gte: 15 } }, { name: /.*by.*/ }])
+    .sort({ price: -1 }) // 1 croissant -1 décroissant
+    .select({ name: 1, author: 1, price: 1 }); // select the field to display
+  console.log(courses);
+}
+
+getCoursesExercice3();
