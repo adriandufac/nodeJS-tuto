@@ -78,7 +78,9 @@ async function updateCourseMethode2(id) {
     }
   );
 }
-
+async function removeCourse(id) {
+  const result = await Course.deleteOne({ _id: id }); // deleteMany
+  console.log(result);
+}
+removeCourse("66292fafe99c621f03176ead");
 // .count() to have the number of document
-
-updateCourseMethode2("66292fafe99c621f03176ead");
