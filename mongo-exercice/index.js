@@ -16,11 +16,21 @@ const courseSchema = new mongoose.Schema({
 
 const Course = mongoose.model("Course", courseSchema);
 
-async function getCourses() {
+async function getCoursesExercice1() {
   const courses = await Course.find({ tags: "backend", isPublished: true })
     .sort({ name: 1 }) // 1 croissant -1 décroissant
     .select({ name: 1, author: 1 }); // select the field to display
   console.log(courses);
 }
 
-getCourses();
+async function getCoursesExercice2() {
+  const courses = await Course.find({
+    tags: { $in: ["frontend", "backend"] },
+    isPublished: true,
+  })
+    .sort({ price: -1 }) // 1 croissant -1 décroissant
+    .select({ name: 1, author: 1 }); // select the field to display
+  console.log(courses);
+}
+
+getCoursesExercice2();
